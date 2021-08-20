@@ -8,11 +8,11 @@
 import Foundation
 
 protocol MainBaseCoordinator: Coordinator {
-    var homeCoordinator: FavoritesBaseCoordinator { get }
+    var favoritesCoordinator: FavoritesBaseCoordinator { get }
     var toursCoordinator: ToursBaseCoordinator { get }
     var loginCoordinator: LoginBaseCoordinator { get }
 
-    func moveTo(flow: AppFlow)
+    func moveTo(flow: TabFlow)
 }
 
 protocol FavoritesBaseCoordinated {

@@ -10,7 +10,8 @@ import UIKit
 
 protocol FavoritesBaseCoordinator: Coordinator {
     func goToFavorites2ScreenWith(title: String)
-    func goToFavoritesFlow()
-    func goToDeepViewInFavoriteTab()
+    func goToTours()
+    func goToTours3()
     func goToLoginFlow()
+    func goToRecoverPasswordFlow()
 }

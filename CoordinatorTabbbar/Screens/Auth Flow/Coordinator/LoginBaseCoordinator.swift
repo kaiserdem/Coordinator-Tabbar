@@ -9,5 +9,5 @@ import Foundation
 
 protocol LoginBaseCoordinator: Coordinator {
     func goToFavoritesFlow()
-    func goToSignUpFlow()
+    func goToRecoverPassword()
 }

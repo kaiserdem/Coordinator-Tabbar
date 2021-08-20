@@ -29,6 +29,8 @@
 		75C3485B26C2DA1A000957D1 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3485A26C2DA1A000957D1 /* FavoritesCoordinator.swift */; };
 		75C3485E26C2DA34000957D1 /* Favorites2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3485D26C2DA34000957D1 /* Favorites2ViewController.swift */; };
 		75C3486126C2DA6C000957D1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3486026C2DA6C000957D1 /* FavoritesViewController.swift */; };
+		75D961A026D0029E00BB5D5C /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9619F26D0029E00BB5D5C /* RecoverPasswordViewController.swift */; };
+		75D961A426D002A900BB5D5C /* RecoverPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D961A326D002A900BB5D5C /* RecoverPasswordViewController.storyboard */; };
 		75EE995026CEA2BA0058B9D5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EE994F26CEA2BA0058B9D5 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		75C3485A26C2DA1A000957D1 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		75C3485D26C2DA34000957D1 /* Favorites2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites2ViewController.swift; sourceTree = "<group>"; };
 		75C3486026C2DA6C000957D1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		75D9619F26D0029E00BB5D5C /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		75D961A326D002A900BB5D5C /* RecoverPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecoverPasswordViewController.storyboard; sourceTree = "<group>"; };
 		75EE994F26CEA2BA0058B9D5 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 			children = (
 				7563A54426C6ABD900CF5AAB /* Coordinator */,
 				7563A54526C6ABEB00CF5AAB /* LogIn  */,
+				75D9619D26D0027A00BB5D5C /* RecoverPassword */,
 			);
 			path = "Auth Flow";
 			sourceTree = "<group>";
@@ -278,6 +283,23 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		75D9619D26D0027A00BB5D5C /* RecoverPassword */ = {
+			isa = PBXGroup;
+			children = (
+				75D9619E26D0028B00BB5D5C /* UI */,
+			);
+			path = RecoverPassword;
+			sourceTree = "<group>";
+		};
+		75D9619E26D0028B00BB5D5C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				75D9619F26D0029E00BB5D5C /* RecoverPasswordViewController.swift */,
+				75D961A326D002A900BB5D5C /* RecoverPasswordViewController.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				752ADCDA26C3E5C700374A36 /* ToursViewController.storyboard in Resources */,
+				75D961A426D002A900BB5D5C /* RecoverPasswordViewController.storyboard in Resources */,
 				7563A54D26C6AC5600CF5AAB /* LoginViewController.storyboard in Resources */,
 				75C3483E26C2D7BE000957D1 /* LaunchScreen.storyboard in Resources */,
 				7563A55926C6AFB700CF5AAB /* FavoritesViewController.storyboard in Resources */,
@@ -361,6 +384,7 @@
 				75EE995026CEA2BA0058B9D5 /* Coordinator.swift in Sources */,
 				756F153926C69CE2001E4D8A /* MainBaseCoordinator.swift in Sources */,
 				75C3483226C2D7BA000957D1 /* AppDelegate.swift in Sources */,
+				75D961A026D0029E00BB5D5C /* RecoverPasswordViewController.swift in Sources */,
 				756F152E26C69C50001E4D8A /* ToursViewController.swift in Sources */,
 				7563A55F26C6BD0C00CF5AAB /* LoginBaseCoordinator.swift in Sources */,
 				756F152826C69C2D001E4D8A /* Tours3ViewController.swift in Sources */,

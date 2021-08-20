@@ -21,23 +21,33 @@ class FavoritesCoordinator: FavoritesBaseCoordinator {
     }
     
     func goToFavorites2ScreenWith(title: String) {
-        let favorites2ViewController = Favorites2ViewController(coordinator: self)
+        let favorites2ViewController = Favorites2ViewController()
+        favorites2ViewController.coordinator = self
         favorites2ViewController.title = title
         navigationRootViewController?.pushViewController(favorites2ViewController, animated: true)
     }
     
-    func goToFavoritesFlow() {
-        parentCoordinator?.moveTo(flow: .Favorites)
+    func goToTours() {
+        parentCoordinator?.moveTo(flow: .Tours)
+        parentCoordinator?.toursCoordinator.resetToRoot()
     }
     
-    func goToDeepViewInFavoriteTab() {
-        parentCoordinator?.moveTo(flow: .Favorites)
+    func goToTours3() {
+        parentCoordinator?.moveTo(flow: .Tours)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) { [weak self] in
             self?.parentCoordinator?.toursCoordinator
                 .resetToRoot()
-                .goToTours2Screen(animated: true)
+                .goToTours2Screen(animated: false)
                 .goToTours3Screen(animated: true)
         }
+    }
+    
+    func goToRecoverPasswordFlow() {
+        let window : UIWindow = UIApplication.shared.keyWindow!
+        let mainCoordinator = MainCoordinator(window)
+        mainCoordinator.startFlowType = .LoginFlow
+        mainCoordinator.start()
+        mainCoordinator.loginCoordinator.goToRecoverPassword()
     }
     
     func goToLoginFlow() {

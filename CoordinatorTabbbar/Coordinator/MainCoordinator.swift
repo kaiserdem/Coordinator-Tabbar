@@ -7,14 +7,14 @@
 
 import UIKit
 
-enum AppFlow {
-    case MostViewed
+enum TabFlow {
     case Favorites
+    case Tours
 }
 
 enum StartFlow {
-    case MainTabbarFlow
     case LoginFlow
+    case MainTabbarFlow
 }
 
 class MainCoordinator: MainBaseCoordinator {
@@ -23,7 +23,7 @@ class MainCoordinator: MainBaseCoordinator {
     
     var startFlowType: StartFlow = .LoginFlow
     
-    lazy var homeCoordinator: FavoritesBaseCoordinator = FavoritesCoordinator()
+    lazy var favoritesCoordinator: FavoritesBaseCoordinator = FavoritesCoordinator()
     lazy var toursCoordinator: ToursBaseCoordinator = ToursCoordinator()
     lazy var loginCoordinator: LoginBaseCoordinator = LoginCoordinator()
 
@@ -45,8 +45,8 @@ class MainCoordinator: MainBaseCoordinator {
             rootViewController = loginViewController!
             
         case .MainTabbarFlow:
-            let homeViewController = homeCoordinator.start()
-            homeCoordinator.parentCoordinator = self
+            let homeViewController = favoritesCoordinator.start()
+            favoritesCoordinator.parentCoordinator = self
             homeViewController!.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "face.smiling"), tag: 0)
             
             let ordersViewController = toursCoordinator.start()
@@ -57,46 +57,25 @@ class MainCoordinator: MainBaseCoordinator {
             
             (rootViewController as? UITabBarController)?.viewControllers = [homeVC,ordersVC]
         }
-        
-        setRootViewController(rootViewController)
-        
-//        self.window.rootViewController = rootViewController
-//        self.window.makeKeyAndVisible()
+                
+        self.window.rootViewController = rootViewController
+        self.window.makeKeyAndVisible()
         
         return nil
     }
-    
-    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
-        guard animated else {
-            self.window.rootViewController = vc
-            self.window.makeKeyAndVisible()
-            return
-        }
-
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
-        UIView.transition(with: window,
-                          duration: 0.9,
-                          options: .curveEaseInOut,
-                          animations: nil,
-                          completion: nil)
-    }
         
-    func moveTo(flow: AppFlow) {
+    func moveTo(flow: TabFlow) {
         switch flow {
-        case .MostViewed:
-            (rootViewController as? UITabBarController)?.selectedIndex = 0
-        case .Favorites:
+        case .Tours:
             (rootViewController as? UITabBarController)?.selectedIndex = 1
+        case .Favorites:
+            (rootViewController as? UITabBarController)?.selectedIndex = 0
         }
-    }
-    
-    func handleDeepLink(text: String) {
     }
     
     func resetToRoot() -> Self {
-        homeCoordinator.resetToRoot()
-        moveTo(flow: .MostViewed)
+        favoritesCoordinator.resetToRoot()
+        moveTo(flow: .Favorites)
         return self
     }
     

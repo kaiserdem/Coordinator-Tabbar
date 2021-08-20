@@ -10,7 +10,6 @@ import UIKit
 class LoginCoordinator: LoginBaseCoordinator {
 
     var parentCoordinator: MainBaseCoordinator?
-    
     lazy var rootViewController: UIViewController = UIViewController()
     
     func start() -> UIViewController? {
@@ -25,12 +24,14 @@ class LoginCoordinator: LoginBaseCoordinator {
         let mainCoordinator = MainCoordinator(window)
         mainCoordinator.startFlowType = .MainTabbarFlow
         mainCoordinator.start()
-        //window.makeKeyAndVisible()
     }
     
-    func goToSignUpFlow() {
-        
+    func goToRecoverPassword() {
+        let vc = RecoverPasswordViewController.instantiate()
+        vc.coordinator = self
+        navigationRootViewController?.pushViewController(vc, animated: true)
     }
+    
     func resetToRoot() -> Self {
         navigationRootViewController?.popToRootViewController(animated: false)
         return self

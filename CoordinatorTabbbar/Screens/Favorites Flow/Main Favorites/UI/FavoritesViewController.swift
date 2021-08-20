@@ -23,7 +23,6 @@ class FavoritesViewController: UIViewController, FavoritesBaseCoordinated, Story
         self.tabBarController?.tabBar.barTintColor = .yellow
         configureButton()
         
-        //self.tabBarController?.tabBar.isHidden = true
     }
     
     private func configureButton() {
@@ -46,6 +45,11 @@ class FavoritesViewController: UIViewController, FavoritesBaseCoordinated, Story
     @IBAction func goToLogin(_ sender: Any) {
         coordinator?.goToLoginFlow()
     }
+    
+    @IBAction func goToRecoverPassword(_ sender: Any) {
+        coordinator?.goToRecoverPasswordFlow()
+    }
+    
     @objc private func goToHome2() {
         coordinator?.goToFavorites2ScreenWith(title: "Top Title")
     }

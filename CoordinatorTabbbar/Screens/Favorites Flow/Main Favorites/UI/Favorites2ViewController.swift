@@ -13,21 +13,11 @@ class Favorites2ViewController: UIViewController, FavoritesBaseCoordinated {
     var goToFavoriteButton: UIButton!
     var goToFavoriteDeepViewButton: UIButton!
     
-    init(coordinator: FavoritesBaseCoordinator) {
-        super.init(nibName: nil, bundle: nil)
-        self.coordinator = coordinator
-        title = "Favorites 2"
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemOrange
-        
+        title = "Favorites 2"
+
         configureButtonGoToFavorite()
         configureGoToFavoriteDeepViewButton()
     }
@@ -37,11 +27,11 @@ class Favorites2ViewController: UIViewController, FavoritesBaseCoordinated {
         view.addSubview(goToFavoriteButton)
         goToFavoriteButton.translatesAutoresizingMaskIntoConstraints = false
         
-        goToFavoriteButton.setTitle(" Go to favorite tab ", for: .normal)
+        goToFavoriteButton.setTitle(" Go to Tours ", for: .normal)
         goToFavoriteButton.layer.borderColor = UIColor.black.cgColor
         goToFavoriteButton.layer.borderWidth = 2
         goToFavoriteButton.backgroundColor = .black
-        goToFavoriteButton.addTarget(self, action: #selector(goToFavoriteTab), for: .touchUpInside)
+        goToFavoriteButton.addTarget(self, action: #selector(didTapTours), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             goToFavoriteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -54,11 +44,11 @@ class Favorites2ViewController: UIViewController, FavoritesBaseCoordinated {
         view.addSubview(goToFavoriteDeepViewButton)
         goToFavoriteDeepViewButton.translatesAutoresizingMaskIntoConstraints = false
         
-        goToFavoriteDeepViewButton.setTitle(" Go to deep view in favorite tab ", for: .normal)
+        goToFavoriteDeepViewButton.setTitle(" Go to Tours 3 ", for: .normal)
         goToFavoriteDeepViewButton.layer.borderColor = UIColor.black.cgColor
         goToFavoriteDeepViewButton.layer.borderWidth = 2
         goToFavoriteDeepViewButton.backgroundColor = .red
-        goToFavoriteDeepViewButton.addTarget(self, action: #selector(goToDeepViewInFavoriteTab), for: .touchUpInside)
+        goToFavoriteDeepViewButton.addTarget(self, action: #selector(didTapTours3), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             goToFavoriteDeepViewButton.topAnchor.constraint(equalTo: goToFavoriteButton.bottomAnchor, constant: 20),
@@ -66,11 +56,11 @@ class Favorites2ViewController: UIViewController, FavoritesBaseCoordinated {
         ])
     }
     
-    @objc private func goToFavoriteTab() {
-        coordinator?.parentCoordinator?.moveTo(flow: .Favorites)
+    @objc private func didTapTours() {
+        coordinator?.goToTours()
     }
     
-    @objc private func goToDeepViewInFavoriteTab() {
-        coordinator?.goToDeepViewInFavoriteTab()
+    @objc private func didTapTours3() {
+        coordinator?.goToTours3()
     }
 }

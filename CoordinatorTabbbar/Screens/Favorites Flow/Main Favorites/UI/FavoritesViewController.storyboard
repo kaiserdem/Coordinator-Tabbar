@@ -30,6 +30,16 @@
                             </button>
                             <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hGz-8d-48o">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ZQi-yp-i7C">
+                                <rect key="frame" x="268" y="7" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Recover Password"/>
+                                <connections>
+                                    <action selector="goToRecoverPassword:" destination="sfA-Do-S1O" eventType="touchUpInside" id="KrT-7t-CdC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ld-vQ-N9m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
